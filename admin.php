@@ -138,7 +138,7 @@ $userTableResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <label class="col-sm-3 col-form-label">Draw Format:</label>
                 <select class="custom-select" id="formatSelection" name="formatSelection">
                   <option value="continuous" <?php if ($result['format'] == 'continuous') { echo "selected"; } ?>>Continuous</option>
-                  <option value="random" <?php if ($result['format'] == 'random') { echo "selected"; } ?>>Random</option>
+                  <option value="random" <?php if ($result['format'] == 'random') { echo "selected"; } ?>>Random (Not Available Yet)</option>
                 </select>
               </div>
             <br><br>
