@@ -1,33 +1,37 @@
 
 ChristmasNameDrawing
 ===================
-This name drawing web application was built to solve an inherent problem of drawing names at Christmas. How is this a complicated problem? If you are like my family, we have spouses, and honestly, drawing your spouses name for Christmas is lame. (We're probably already buying them a gift anyway, so this just becomes a burden to purchase a separate gift.) 
+This name drawing web app was built to solve an inherent problem of drawing names at Christmas. 
+How is this a complicated problem? 
+If you are like my family, we have spouses, and honestly, drawing your spouses name for Christmas is lame. (We're probably already buying them a gift anyway, so this just becomes a burden to purchase a separate gift.) 
 
 This little application solves this problem (and a couple other ones as well).
 
 ## Feature List
-####  Generate room codes so that an unlimited number of drawing games can be played at the same time. 
-
+####  Generate room codes
  - Great if you have multiple family Christmas events to attend and they each have their separate name drawings.
  - An easy to share, generated room code is also provided so that you can send the URL to the participants easily.
 
-#### Drawing restrictions. 
- - Admins can setup the rules on who can draw who. Easily allow for spouses to be removed from the drawing possibilities. 
+#### Drawing restrictions
+ - Admins can setup the rules on who can draw who. Easily allow for spouses (or any other conditions) to be removed from the drawing possibilities. 
 
 #### Easy logins
- - Most websites that provide a similar feature require you provide an email to create an account - in some cases, each person needs an email provided to play. This has no such requirement. The login is just the room code and their name.
+ - Other online apps that do name drawings require email addresses and/or phone numbers to participate. This has no such requirement. 
+ - The login is just the room code and the player's name.
+ - Besides, what are these other sites doing with that information outside the game?
 
-#### Customize Drawing Format
- - Want the game to play so there is no dead end? And the first person who gives their gift is the last to receive? You can change the behavior of the game to allow or not allow this!
-
-#### Draw your name on your own schedule
+#### Schedule friendly
  - Have family members who are busy and can't join to draw a name at the same time as everyone else? This system allows players to draw their name on their own schedule without needing to be present or available with everyone else.
 
 #### Make a mistake?
  - All names can be easily cleared and corrected using the simple to use interface. See pictures below.
 
 #### Cheaters?!
- - Since the login is so easy to get in, the game prevents users from viewing a name twice and locking out the results. Should a player forget who they drew, they can contact the admin and from our admin panel, easily be unlocked to allow a re-view. 
+ - Since the login is so easy to get in, the game prevents users from viewing a name twice and locking out the results. 
+ - Should a player forget who they drew, they can contact the admin and from our admin panel, easily be unlocked to allow another peek at the their drawn name. 
+
+#### Who hasn't drawn?
+ - Using the "Unlock Users" feature, you can also use this to know who has and hasn't drawn their name yet. (Just in case you have family members who may have forgotten to draw.)
 
 
 ## Other ideas?
@@ -36,10 +40,14 @@ If you have ideas to make this more fun and interactive, please let me know! I'm
 #### Ideas under review:
 - Wishlists
 - Breadcrumb / progress flow
-
+- Customizing the drawing format (Continuous vs Random)
 
 ## Final Thoughts
 This game was made to solve our family problem when it came to drawing names at Christmas. If you use it for your own Christmas and it worked great, please let me know you enjoyed it. I love hearing from people who use my stuff to solve their problems. If you have any questions, please reach out. 
+
+Also - yes. The code isn't great. I started it several years ago and really haven't changed the logic. Just bootstrap changes here and here. (Plus some bugs fixes.)
+I'm going to re-write this app for the 2021 Christmas season in some newer languages and frameworks I've learned to hopefully make this a bit more polished. 
+Feel free to open issues with questions.
 
 
 ## Screenshots
