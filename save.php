@@ -120,7 +120,7 @@ if(isset($_POST['save'])) {
 
     $solutionFound = FALSE;
     $gameRetries = 0;
-    $maxGameRetries = count($allNames) * count($allNames);
+    $maxGameRetries = count($allNames) * count($allNames) * 2;
     $gameRestarted = TRUE;
     $gameMessage = "";
 
@@ -156,11 +156,21 @@ if(isset($_POST['save'])) {
         $gameRetries++;
         $gameRestarted = TRUE;
 
+        if ($gameRetries > $maxGameRetries) {
+          break;
+        }
+
       } elseif (empty($validNameChoices) && count($remainingNames) == 1 ) {
         $chosenName = $firstPlayer;
-        $solutionFound = TRUE;
-        $successfulGame = TRUE;
 
+        if (in_array($firstPlayer, $noDrawPersonal)) {
+          $solutionFound = FALSE;
+          $successfulGame = FALSE;
+
+        } else {
+          $solutionFound = TRUE;
+          $successfulGame = TRUE;
+        }
       } else {
         $chosenName = $validNameChoices[array_rand($validNameChoices)];
       }
@@ -175,20 +185,21 @@ if(isset($_POST['save'])) {
 
       $lastPlayer = $chosenName;
 
-
     } while (!$solutionFound);
-
 
     // We're done...
     if ($successfulGame == TRUE) {
       if ($disableGame == TRUE) {
-        $stmt = $DBcon->prepare("UPDATE $DB_rooms SET live = '0' WHERE roomcode = '".$roomcode."'");
-        $stmt->execute(); 
-        header ("Location: admin.php");    
+        $live = "0";
       } else {
-        $stmt = $DBcon->prepare("UPDATE $DB_rooms SET live = '1' WHERE roomcode = '".$roomcode."'");
-        $stmt->execute();       
+        $live = "1";
       }
+
+      $stmt = $DBcon->prepare("UPDATE $DB_rooms SET live = $live WHERE roomcode = '".$roomcode."'");
+      $stmt->execute(); 
+
+      $stmt = $DBcon->prepare("UPDATE $DB_rooms SET solution_attempts = $gameRetries WHERE roomcode = '".$roomcode."'");
+      $stmt->execute(); 
 
       header ("Location: admin.php");
     } else {

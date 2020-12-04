@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: db
--- Generation Time: Jan 08, 2020 at 11:50 PM
--- Server version: 5.7.28
--- PHP Version: 7.2.22
+-- Host: db:3306
+-- Generation Time: Dec 04, 2020 at 10:18 PM
+-- Server version: 5.7.32
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,6 +35,7 @@ CREATE TABLE `rooms` (
   `groupname` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `dollaramount` int(3) NOT NULL,
   `format` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `solution_attempts` int(4) DEFAULT NULL,
   `live` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
